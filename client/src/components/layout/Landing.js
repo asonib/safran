@@ -10,8 +10,8 @@ const Landing = () => {
             Tool Test for Internship
           </p>
           <div class="buttons">
-            <a href="register.html" class="btn btn-primary">Sign Up</a>
-            <a href="login.html" class="btn btn-light">Login</a>
+            <a href="/register" class="btn btn-primary">Sign Up</a>
+            <a href="/login" class="btn btn-light">Login</a>
           </div>
         </div>
       </div>

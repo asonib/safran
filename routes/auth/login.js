@@ -3,11 +3,19 @@ const router = express.Router()
 const { check, validationResult } = require('express-validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const auth = require('../../middleware/auth')
+
 //loading all environment variables
 require('dotenv').config();
 // Load User model
 const Users = require('../../models/Users');
-
+//load User
+router.get('/auth', auth, async (req, res) => {
+    console.log(req.user);
+    const details = await Users.findById({_id: req.user}).select('-password');
+    console.log(details);
+    return res.send(details);
+});
 // Login
 router.post('/auth/login', [ 
     check('email', 'Email is required').isEmail(),

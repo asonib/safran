@@ -17,7 +17,7 @@ const Users = mongoose.model('user');
     response: token for autherization
 */
 router.post('/auth/register', [
-    check('name', 'Name is required').isString(),
+    check('name', 'Name is required'),
     check('username', 'Username is required').isString(),
     check('phone', 'Phone Number is required').isString(),
     check('email', 'Email is required').isEmail(),
@@ -28,7 +28,7 @@ router.post('/auth/register', [
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(422).json({ errors: errors.array() });
     }
 
     const check_email = await Users.findOne({email: req.body.email})
