@@ -15,7 +15,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const basicLinks = (
     <ul>
       <li><Link to="/register"><i className="fas fa-registered"></i><span className="hide-sm"> Register</span></Link></li>
-      <li><Link to="/login"><i className="fas fa-sign-in-alt"></i><span className="hide-sm">Login</span></Link></li>
+      <li><Link to="/login"><i className="fas fa-sign-in-alt"></i><span className="hide-sm"> Login</span></Link></li>
     </ul>
   );
   return (
