@@ -38,23 +38,23 @@ const Register = ({setAlert, register, isAuthenticated}) => {
       <p class="lead"><i class="fas fa-user"></i> Create Your Account</p>
       <form class="form" onSubmit={e => onSubmit(e)}>
         <div class="form-group">
-          <input type="text" placeholder="Name" name="name" value={name} onChange={e => onChange(e)}  />
+          <input type="text" placeholder="Name" name="name" value={name} onChange={e => onChange(e)}  required/>
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Email Address" name="email" value={email} onChange={e => onChange(e)} />
+          <input type="email" placeholder="Email Address" name="email" value={email} onChange={e => onChange(e)} required/>
           <small class="form-text"
             >This site uses Gravatar so if you want a profile image, use a
             Gravatar email</small
           >
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Username" name="username" value={username} onChange={e => onChange(e)} />
+          <input type="text" placeholder="Username" name="username" value={username} onChange={e => onChange(e)} required/>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Phone Number" name="phone" value={phone} onChange={e => onChange(e)} />
+          <input type="text" placeholder="Phone Number" name="phone" value={phone} onChange={e => onChange(e)} required/>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Address" name="address" value={address} onChange={e => onChange(e)} />
+          <input type="text" placeholder="Address" name="address" value={address} onChange={e => onChange(e)} required/>
         </div>
         <div class="form-group">
           <input
@@ -63,7 +63,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
             name="password"
             minLength="5"
             value={password} onChange={e => onChange(e)}
-            
+            required
           />
         </div>
         <div class="form-group">
@@ -73,7 +73,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
             name="confirm"
             minLength="5"
             value={confirm} onChange={e => onChange(e)}
-            
+            required
           />
         </div>
         <input type="submit" class="btn btn-primary" value="Register" />
