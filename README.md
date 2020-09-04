@@ -149,3 +149,8 @@ return details of the authenticated user
     "uuid": "^8.3.0"
 }
 ```
+
+## Database
+```
+Mongo Atlas with AWS containers
+```
