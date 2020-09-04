@@ -107,7 +107,6 @@ return details of the authenticated user
         "username": "asb",
         "name": "Aryan Soni",
         "email": "aryan@git.com",
-        "password": "$2a$10$5C2if0w05.3lkkeeYW9BPe0MOrWdiPv9rQTEPiQbjykFAL4HaKxpu",
         "address": "Block - C, Devadan Hall, Christ University, Bangalore - 560074",
         "phone": "8340505682",
         "avatar": "https://gravatar.com/avatar/f96d2d8fac12c5a9cc6a5dc136fff7e0?d=mm&r=pg&s=200",
