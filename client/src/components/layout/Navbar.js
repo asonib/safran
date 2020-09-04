@@ -1,20 +1,37 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { logout } from '../../actions/auth';
 
-const Navbar = () => {
-    return (
-        <nav class="navbar bg-dark">
-      <h1>
-        <a href="/"><i class="fas fa-code"></i> Safran Test</a>
-      </h1>
-      <ul>
-        {/* <li><a href="profiles.html">Developers</a></li> */}
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
-      </ul>
-    </nav>
-    )
+const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+  const authLinks = (
+    <ul>
+      <li><Link to="/users/teammates"><i className="fas fa-users"></i><span className="hide-sm"> Teammates</span></Link></li>
+      <li><Link to="/dashboard"><i className="fas fa-user"></i><span className="hide-sm"> Dashboard</span></Link></li>
+      <li><Link onClick={logout} to="/"><i className="fas fa-sign-out-alt"></i><span className="hide-sm"> Logout</span></Link></li>
+    </ul>
+  );
+  const basicLinks = (
+    <ul>
+      <li><Link to="/register"><i className="fas fa-registered"></i><span className="hide-sm"> Register</span></Link></li>
+      <li><Link to="/login"><i className="fas fa-sign-in-alt"></i><span className="hide-sm">Login</span></Link></li>
+    </ul>
+  );
+  return (
+    <nav className="navbar bg-dark">
+            <h1>
+                <Link to="/"><i className="fas fa-code"></i>Safran</Link>
+            </h1>
+    { !loading && (<Fragment>{isAuthenticated ? authLinks: basicLinks}</Fragment>)}
+        </nav>
+  )
 }
 
-
-export default Navbar;
+Navbar.propTypes = {
+  logout: PropTypes.func.isRequired,
+}
+const mapStateToProp = state => ({
+  auth: state.auth
+});
+export default connect(mapStateToProp, { logout })(Navbar);
