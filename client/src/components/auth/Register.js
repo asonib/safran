@@ -51,7 +51,7 @@ const Register = ({setAlert, register, isAuthenticated}) => {
           <input type="text" placeholder="Username" name="username" value={username} onChange={e => onChange(e)} required/>
         </div>
         <div class="form-group">
-          <input type="text" placeholder="Phone Number" name="phone" value={phone} onChange={e => onChange(e)} required/>
+          <input type="text" placeholder="Phone Number" name="phone" value={phone} maxLength="10" minLength="10" onChange={e => onChange(e)} required/>
         </div>
         <div class="form-group">
           <input type="text" placeholder="Address" name="address" value={address} onChange={e => onChange(e)} required/>

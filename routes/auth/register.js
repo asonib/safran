@@ -19,7 +19,7 @@ const Users = mongoose.model('user');
 router.post('/auth/register', [
     check('name', 'Name is required'),
     check('username', 'Username is required').isString(),
-    check('phone', 'Phone Number is required').isString(),
+    check('phone', 'Phone Number is required').isLength({min: 10}),
     check('email', 'Email is required').isEmail(),
     check('address', 'Address is required').isString(),
     // password must be at least 5 chars long
