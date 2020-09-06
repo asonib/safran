@@ -33,17 +33,17 @@ router.post('/auth/register', [
 
     const check_email = await Users.findOne({email: req.body.email})
     if(check_email){
-        return res.json({errors: [{'msg': 'Email Already Exist'}]})
+        return res.status(422).json({errors: [{'msg': 'Email Already Exist'}]})
     }
 
     const check_phone = await Users.findOne({phone: req.body.phone})
     if(check_phone){
-        return res.json({errors: [{'msg': 'Phone Number Already Exist'}]})
+        return res.status(422).json({errors: [{'msg': 'Phone Number Already Exist'}]})
     }
 
     const check_uname = await Users.findOne({username: req.body.username})
     if(check_uname){
-        return res.json({errors: [{'msg': 'Username Taken'}]})
+        return res.status(422).json({errors: [{'msg': 'Username Taken'}]})
     }
 
     if(req.body.password != req.body.confirm){

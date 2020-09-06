@@ -8,7 +8,7 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGO_LOCAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(()=>{
