@@ -2,7 +2,7 @@
 REST API server built using Node/Express.js, Client Side built using React.js
 
 ## Registration(SignUp) API
-Registers user and generates a token for automatic login after registration.
+Register users and generates a token for automatic login after registration.
 
 **API Address**: `host/api/auth/register`
 
